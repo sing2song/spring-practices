@@ -11,7 +11,7 @@
 <title>방명록</title>
 </head>
 <body>
-	<form action="${pageContext.request.contextPath }/GuestbookServlet?a=add" method="post">
+	<form action="${pageContext.request.contextPath }/insert" method="post">
 		<table border=1 width=500>
 			<tr>
 				<td>이름</td>
@@ -35,7 +35,7 @@
 			<td>[${status.count}]</td>
 			<td>${vo.name }</td>
 			<td>${vo.reg_date }</td>
-			<td><a href="${pageContext.request.contextPath }/GuestbookServlet?a=deleteform&no=${vo.no}">삭제</a></td>
+			<td><a href="${pageContext.request.contextPath }/delete/${vo.no}">삭제</a></td>
 		</tr>
 		<tr>
 			<td colspan=4>

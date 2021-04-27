@@ -131,7 +131,7 @@ public class GuestbookRepository {
 	}
 
 	
-	public boolean delete(String no, String password) {
+	public boolean delete(GuestbookVo vo) {
 		boolean result = false;
 		Connection conn = null;
 		PreparedStatement pstmt = null;
@@ -144,8 +144,8 @@ public class GuestbookRepository {
 			pstmt = conn.prepareStatement(sql);
 
 			//4. 바인딩
-			pstmt.setString(1,no);
-			pstmt.setString(2, password);
+			pstmt.setString(1,vo.getNo()+"");
+			pstmt.setString(2, vo.getPassword());
 			
 			//5. SQL문 실행
 			int count = pstmt.executeUpdate();
